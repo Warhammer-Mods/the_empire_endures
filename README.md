@@ -29,3 +29,9 @@ Elspeth's native script has one ownership guard added to its MissionSucceeded co
 - Confirm the original Empire Endures building/recruitment changes remain available.
 
 School income from buildings gated specifically to Wissenland remains as supplied; Karl can acquire schematics through his added salvage option.
+
+## GitHub Actions
+
+The main-mod workflow follows Arkhan the Black Expanded's DB check, Lua lint and RPFM Server build pipeline, without submod jobs. Pushes and pull requests for main, develop, feature, hotfix, bugfix, support and update branches trigger the pipeline; manual runs support file-pattern and debug inputs.
+
+DB checks validate exports, the approved 45-file inventory and the supplied baseline hashes. Lua checks use Lua 5.1 and run the Gunnery School isolation test. After both pass, RPFM 5.3.2 builds and reopens the pack, verifies its inventory and decodes every DB/LOC file. Download `the_empire_endures` from the workflow's artifacts; artifacts and RPFM logs are retained for 90 days.

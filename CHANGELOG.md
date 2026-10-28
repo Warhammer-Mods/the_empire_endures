@@ -8,3 +8,5 @@
 - Preserve Elspeth's progression, save key, victory objectives and Gardens of Morr.
 - Verify all baseline payload hashes, decode all packed DB fragments, and pass isolated Lua 5.1 mission-ownership tests.
 - In-game UI, recruitment, campaign progression and multiplayer validation remain pending.
+
+- Add Arkhan-style GitHub Actions for DB validation, Lua lint/isolation checks and verified RPFM pack builds, with main-mod artifacts only.

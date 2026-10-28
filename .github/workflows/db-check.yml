@@ -1,0 +1,24 @@
+name: DB check
+
+on:
+  workflow_call:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - name: Validate database and localisation exports
+        working-directory: src
+        run: python3 ../.github/scripts/check_tsv.py
+      - name: Verify approved main-pack inventory and supplied baseline
+        run: python3 .github/scripts/check_main_inventory.py
+      - name: Build locally and verify source payloads
+        run: |
+          python3 build.py
+          python3 verify.py

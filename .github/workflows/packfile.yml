@@ -1,0 +1,63 @@
+name: Build main mod
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+      - 'feature/**'
+      - 'hotfix/**'
+      - 'bugfix/**'
+      - 'support/**'
+      - 'update/**'
+  pull_request:
+    branches:
+      - main
+      - develop
+      - 'feature/**'
+      - 'hotfix/**'
+      - 'bugfix/**'
+      - 'support/**'
+      - 'update/**'
+  workflow_dispatch:
+    inputs:
+      paths:
+        required: false
+        type: string
+        default: animations/** db/** script/** text/** ui/** variantmeshes/** vfx/**
+        description: Space-delimited game-file patterns inside src.
+      debug_enabled:
+        description: Enable debug logging
+        required: false
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: packfile-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  db-check:
+    name: DB / the_empire_endures
+    uses: ./.github/workflows/db-check.yml
+  lua-check:
+    name: Lua / the_empire_endures
+    uses: ./.github/workflows/lua-lint.yml
+    with:
+      source_root: src
+  build-packfile:
+    name: Pack / the_empire_endures
+    needs: [db-check, lua-check]
+    uses: ./.github/workflows/packfile-build.yml
+    secrets:
+      token: ${{ secrets.GITHUB_TOKEN }}
+    with:
+      source_root: src
+      pack_name: the_empire_endures
+      paths: ${{ github.event_name == 'workflow_dispatch' && inputs.paths || 'animations/** db/** script/** text/** ui/** variantmeshes/** vfx/**' }}
+      paths_separator: ' '
+      game: warhammer_3
+      debug_enabled: ${{ inputs.debug_enabled || false }}
