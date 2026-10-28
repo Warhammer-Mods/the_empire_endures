@@ -1,0 +1,125 @@
+{
+  "pack_sha256": "2843f7ddda76035b41d4bd3ac091150caf6136e7ccf529f2fef370cd8345534d",
+  "files": [
+    {
+      "path": "animations/battle/persistent/hu1_vampire_zombie_sword_persistent_metadata_alive_0.anm.meta",
+      "sha256": "8fd3d0356ca59e9152a1b2fc7539f3bee1a0056f8f23cc12e8f1af33b64141b0"
+    },
+    {
+      "path": "animations/battle/persistent/hu8c_crypt_ghoul_club_persistent_metadata_alive_0.anm.meta",
+      "sha256": "97ee083f15238d76c7a74d2d1fa83c03323fbc8bc660bfaf65ffee650e8ea527"
+    },
+    {
+      "path": "db/_kv_key_buildings_tables/!!!!the_empire_endures",
+      "sha256": "643da8b5f8477a581ba9936219931b015951c55615f3a5b13572ed10271c899d"
+    },
+    {
+      "path": "db/_kv_rules_tables/the_empire_endures",
+      "sha256": "18ff1a5b5b74552fbbe064bc6f3ea9e252fdd3b2c5e97f40ccf37cec88fa571a"
+    },
+    {
+      "path": "db/battle_set_pieces_tables/the_empire_endures",
+      "sha256": "0c81df68bcbc1e4406729805e765cafc1c6c21ae805223c22a059bfa78af9aae"
+    },
+    {
+      "path": "db/building_chain_availability_sets_tables/the_empire_endures",
+      "sha256": "766209d1af56ae355250bb83b284b26e518d4c294163471c6d8bf138ed0d9dd8"
+    },
+    {
+      "path": "db/building_chain_set_items_tables/the_empire_endures",
+      "sha256": "fbdc0f1b8046ef45aa4e431eb95febc23c8db33b3f13f4b06ef09ab56c54a60a"
+    },
+    {
+      "path": "db/building_chains_tables/the_empire_endures",
+      "sha256": "6e462fa39a84c7d01d6690e3dd3349abb2b3f3d142a5e9cada8ff5f894770a6b"
+    },
+    {
+      "path": "db/building_culture_variants_tables/the_empire_endures",
+      "sha256": "713712f03f12748d8f4855977eaed5f261b91c02aa69a3d444c3a24cc38eee08"
+    },
+    {
+      "path": "db/building_effects_junction_tables/ee_beastmen",
+      "sha256": "27be5ac31cde4b082e75ef522087e2ab2820321098db8277593972a649d7056d"
+    },
+    {
+      "path": "db/building_effects_junction_tables/the_empire_endures",
+      "sha256": "b22687be17c6137887f76e4644559b2ff4805acb7c62682cddd573031f3849c3"
+    },
+    {
+      "path": "db/building_instances_tables/the_empire_endures",
+      "sha256": "9b51b91ffb6435ebed61a0325dbfa801ebedc3b459d6d80afb46367bd397d0d6"
+    },
+    {
+      "path": "db/building_levels_tables/ee_demon_prince",
+      "sha256": "0f2c2dd6844242af20eec1740e7ae14b0451ca9cf728d72b0ea66c05e37c1151"
+    },
+    {
+      "path": "db/building_levels_tables/the_empire_endures",
+      "sha256": "3867086ae83bbcdb3b31e780a4538f68a503fc6e34182fc927c6cb286b4a2550"
+    },
+    {
+      "path": "db/building_set_to_building_junctions_tables/the_empire_endures",
+      "sha256": "474d5ec9063c86e8f3a79b8c67ef4dbccb0ec3c76a92fe9ad4f455dd0735dda4"
+    },
+    {
+      "path": "db/building_superchains_tables/the_empire_endures",
+      "sha256": "b6fef56aa98945493378ea8a3aab2f5522a06f8843cd01540757a9abc97786f0"
+    },
+    {
+      "path": "db/building_units_allowed_tables/ee_beastmen",
+      "sha256": "762e868951f7d9f1b0b26759c895a475ddf2fd8daee3d3fad9c17e08ba4f1a94"
+    },
+    {
+      "path": "db/building_units_allowed_tables/ee_darkelves",
+      "sha256": "696c4a21690351b2cdbac56df9a440905a34100fe3a79f0fc6037f74e692e6b9"
+    },
+    {
+      "path": "db/building_units_allowed_tables/the_empire_endures",
+      "sha256": "989596273a8befa5f0b75142a8c862730f2df33806aa3f27dc71527b315d8f8d"
+    },
+    {
+      "path": "db/building_upgrades_junction_tables/the_empire_endures",
+      "sha256": "cf6e54696385f8db9331b7c5b736a453d9afabdfee5697b5cb4e347898d08cd2"
+    },
+    {
+      "path": "db/cai_construction_system_building_values_tables/the_empire_endures",
+      "sha256": "7969f62154a984a7f2fa274bdbd2234f4c163c6ed45a999bc5f7c14726f913cc"
+    },
+    {
+      "path": "db/campaign_variables_tables/the_empire_endures",
+      "sha256": "02b301ef795a6671789f8b3e8ab5695c406511e120e76c15a9bfe712ca4c0c42"
+    },
+    {
+      "path": "db/effect_bundles_to_effects_junctions_tables/the_empire_endures",
+      "sha256": "13233910eef063b66f528c8744194234b0f1ab0f01e62cebef69f4cbec8ec8a3"
+    },
+    {
+      "path": "db/faction_agent_permitted_subtypes_tables/the_empire_endures",
+      "sha256": "e3432b68759657ddc1bcb090da5781c795d67702cc9971db9f890ca2caff8f97"
+    },
+    {
+      "path": "db/projectiles_tables/the_empire_endures",
+      "sha256": "edb66c6e5f476124bb669377f0193a01ac913d76a1e06ee8d37635e8fd801524"
+    },
+    {
+      "path": "db/recruitment_sources_tables/the_empire_endures",
+      "sha256": "3cb0a749c20f401883978782826f39fe46176fa19babc99724b900bedc3912a1"
+    },
+    {
+      "path": "db/teleportation_network_traveller_requirements_tables/the_empire_endures",
+      "sha256": "ded8de9aed0b3376b0a3f01088a2ef85393f41ca5b99373853669854b8e228bd"
+    },
+    {
+      "path": "db/teleportation_node_templates_tables/the_empire_endures",
+      "sha256": "9424f93bd77e6c74a6286f2453909238e77292463eed588ecc6cd62d65e2a4e2"
+    },
+    {
+      "path": "db/unit_set_to_unit_junctions_tables/the_empire_endures",
+      "sha256": "280f15e791ff837c512ba491ee226118c7d02d565d1a4a5ee45a32a1b599edef"
+    },
+    {
+      "path": "db/units_to_groupings_military_permissions_tables/the_empire_endures",
+      "sha256": "6958a38b9a4fb9ba14a833634c4e17b6cbb3bb0de62d48e8ceefa42d838b6fee"
+    }
+  ]
+}
