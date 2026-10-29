@@ -10,3 +10,9 @@
 - In-game UI, recruitment, campaign progression and multiplayer validation remain pending.
 
 - Add Arkhan-style GitHub Actions for DB validation, Lua lint/isolation checks and verified RPFM pack builds, with main-mod artifacts only.
+
+## Fix - 2026-10-29
+
+- Fix startup CTD: three cloned charge-check members incorrectly referenced nonexistent cloned campaign groups. Retain vanilla group IDs and independent member IDs.
+- Validate every added schema-declared reference against reviewed native keys and local records; verify native DB bytes match documented rows.
+- Add regression tests reproducing all three invalid references.

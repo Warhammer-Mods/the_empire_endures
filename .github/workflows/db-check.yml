@@ -18,6 +18,8 @@ jobs:
         run: python3 ../.github/scripts/check_tsv.py
       - name: Verify approved main-pack inventory and supplied baseline
         run: python3 .github/scripts/check_main_inventory.py
+      - name: Reject invalid database references
+        run: python3 -m unittest discover -s .github/tests -p "test_db_references.py"
       - name: Build locally and verify source payloads
         run: |
           python3 build.py

@@ -1,0 +1,986 @@
+{
+  "fields": {
+    "campaign_group_member_criteria_cultures_tables": [
+      {
+        "name": "culture",
+        "field_type": "StringU8",
+        "is_key": false,
+        "default_value": null,
+        "is_filename": false,
+        "filename_relative_path": null,
+        "is_reference": [
+          "cultures",
+          "key"
+        ],
+        "lookup": null,
+        "description": "",
+        "ca_order": 1,
+        "is_bitwise": 0,
+        "enum_values": {},
+        "is_part_of_colour": null
+      },
+      {
+        "name": "member",
+        "field_type": "StringU8",
+        "is_key": true,
+        "default_value": null,
+        "is_filename": false,
+        "filename_relative_path": null,
+        "is_reference": [
+          "campaign_group_members",
+          "id"
+        ],
+        "lookup": null,
+        "description": "",
+        "ca_order": 0,
+        "is_bitwise": 0,
+        "enum_values": {},
+        "is_part_of_colour": null
+      },
+      {
+        "name": "context",
+        "field_type": "StringU8",
+        "is_key": true,
+        "default_value": null,
+        "is_filename": false,
+        "filename_relative_path": null,
+        "is_reference": [
+          "campaign_group_member_culture_contexts",
+          "id"
+        ],
+        "lookup": null,
+        "description": "",
+        "ca_order": 2,
+        "is_bitwise": 0,
+        "enum_values": {},
+        "is_part_of_colour": null
+      }
+    ],
+    "campaign_group_member_criteria_factions_tables": [
+      {
+        "name": "faction",
+        "field_type": "StringU8",
+        "is_key": false,
+        "default_value": null,
+        "is_filename": false,
+        "filename_relative_path": null,
+        "is_reference": [
+          "factions",
+          "key"
+        ],
+        "lookup": null,
+        "description": "",
+        "ca_order": 2,
+        "is_bitwise": 0,
+        "enum_values": {},
+        "is_part_of_colour": null
+      },
+      {
+        "name": "member",
+        "field_type": "StringU8",
+        "is_key": true,
+        "default_value": null,
+        "is_filename": false,
+        "filename_relative_path": null,
+        "is_reference": [
+          "campaign_group_members",
+          "id"
+        ],
+        "lookup": null,
+        "description": "",
+        "ca_order": 0,
+        "is_bitwise": 0,
+        "enum_values": {},
+        "is_part_of_colour": null
+      },
+      {
+        "name": "context",
+        "field_type": "StringU8",
+        "is_key": true,
+        "default_value": null,
+        "is_filename": false,
+        "filename_relative_path": null,
+        "is_reference": [
+          "campaign_group_member_faction_contexts",
+          "id"
+        ],
+        "lookup": null,
+        "description": "",
+        "ca_order": 1,
+        "is_bitwise": 0,
+        "enum_values": {},
+        "is_part_of_colour": null
+      }
+    ],
+    "campaign_group_member_criteria_numeric_ranges_tables": [
+      {
+        "name": "max_range",
+        "field_type": "I32",
+        "is_key": false,
+        "default_value": "0",
+        "is_filename": false,
+        "filename_relative_path": null,
+        "is_reference": null,
+        "lookup": null,
+        "description": "",
+        "ca_order": 2,
+        "is_bitwise": 0,
+        "enum_values": {},
+        "is_part_of_colour": null
+      },
+      {
+        "name": "member",
+        "field_type": "StringU8",
+        "is_key": true,
+        "default_value": null,
+        "is_filename": false,
+        "filename_relative_path": null,
+        "is_reference": [
+          "campaign_group_members",
+          "id"
+        ],
+        "lookup": null,
+        "description": "",
+        "ca_order": 0,
+        "is_bitwise": 0,
+        "enum_values": {},
+        "is_part_of_colour": null
+      },
+      {
+        "name": "min_range",
+        "field_type": "I32",
+        "is_key": false,
+        "default_value": "0",
+        "is_filename": false,
+        "filename_relative_path": null,
+        "is_reference": null,
+        "lookup": null,
+        "description": "",
+        "ca_order": 1,
+        "is_bitwise": 0,
+        "enum_values": {},
+        "is_part_of_colour": null
+      },
+      {
+        "name": "context",
+        "field_type": "StringU8",
+        "is_key": true,
+        "default_value": null,
+        "is_filename": false,
+        "filename_relative_path": null,
+        "is_reference": [
+          "campaign_group_member_numeric_range_contexts",
+          "id"
+        ],
+        "lookup": null,
+        "description": "",
+        "ca_order": 3,
+        "is_bitwise": 0,
+        "enum_values": {},
+        "is_part_of_colour": null
+      }
+    ],
+    "campaign_group_member_criteria_pooled_resources_tables": [
+      {
+        "name": "member",
+        "field_type": "StringU8",
+        "is_key": true,
+        "default_value": null,
+        "is_filename": false,
+        "filename_relative_path": null,
+        "is_reference": [
+          "campaign_group_members",
+          "id"
+        ],
+        "lookup": null,
+        "description": "",
+        "ca_order": 0,
+        "is_bitwise": 0,
+        "enum_values": {},
+        "is_part_of_colour": null
+      },
+      {
+        "name": "pooled_resource",
+        "field_type": "StringU8",
+        "is_key": false,
+        "default_value": null,
+        "is_filename": false,
+        "filename_relative_path": null,
+        "is_reference": [
+          "pooled_resources",
+          "key"
+        ],
+        "lookup": null,
+        "description": "",
+        "ca_order": 1,
+        "is_bitwise": 0,
+        "enum_values": {},
+        "is_part_of_colour": null
+      }
+    ],
+    "campaign_group_members_tables": [
+      {
+        "name": "group",
+        "field_type": "StringU8",
+        "is_key": false,
+        "default_value": null,
+        "is_filename": false,
+        "filename_relative_path": null,
+        "is_reference": [
+          "campaign_groups",
+          "id"
+        ],
+        "lookup": null,
+        "description": "",
+        "ca_order": 1,
+        "is_bitwise": 0,
+        "enum_values": {},
+        "is_part_of_colour": null
+      },
+      {
+        "name": "id",
+        "field_type": "StringU8",
+        "is_key": true,
+        "default_value": null,
+        "is_filename": false,
+        "filename_relative_path": null,
+        "is_reference": null,
+        "lookup": null,
+        "description": "",
+        "ca_order": 0,
+        "is_bitwise": 0,
+        "enum_values": {},
+        "is_part_of_colour": null
+      },
+      {
+        "name": "priority",
+        "field_type": "F32",
+        "is_key": false,
+        "default_value": "0",
+        "is_filename": false,
+        "filename_relative_path": null,
+        "is_reference": null,
+        "lookup": null,
+        "description": "",
+        "ca_order": 2,
+        "is_bitwise": 0,
+        "enum_values": {},
+        "is_part_of_colour": null
+      }
+    ],
+    "campaign_group_pooled_resources_tables": [
+      {
+        "name": "campaign_group",
+        "field_type": "StringU8",
+        "is_key": true,
+        "default_value": null,
+        "is_filename": false,
+        "filename_relative_path": null,
+        "is_reference": [
+          "campaign_groups",
+          "id"
+        ],
+        "lookup": null,
+        "description": "",
+        "ca_order": 0,
+        "is_bitwise": 0,
+        "enum_values": {},
+        "is_part_of_colour": null
+      },
+      {
+        "name": "resource",
+        "field_type": "StringU8",
+        "is_key": true,
+        "default_value": null,
+        "is_filename": false,
+        "filename_relative_path": null,
+        "is_reference": [
+          "pooled_resources",
+          "key"
+        ],
+        "lookup": null,
+        "description": "",
+        "ca_order": 1,
+        "is_bitwise": 0,
+        "enum_values": {},
+        "is_part_of_colour": null
+      },
+      {
+        "name": "initial_amount",
+        "field_type": "I32",
+        "is_key": false,
+        "default_value": "0",
+        "is_filename": false,
+        "filename_relative_path": null,
+        "is_reference": null,
+        "lookup": null,
+        "description": "",
+        "ca_order": 2,
+        "is_bitwise": 0,
+        "enum_values": {},
+        "is_part_of_colour": null
+      }
+    ],
+    "campaign_group_ritual_chains_tables": [
+      {
+        "name": "campaign_group",
+        "field_type": "StringU8",
+        "is_key": true,
+        "default_value": null,
+        "is_filename": false,
+        "filename_relative_path": null,
+        "is_reference": [
+          "campaign_groups",
+          "id"
+        ],
+        "lookup": null,
+        "description": "",
+        "ca_order": 0,
+        "is_bitwise": 0,
+        "enum_values": {},
+        "is_part_of_colour": null
+      },
+      {
+        "name": "ritual_chain",
+        "field_type": "StringU8",
+        "is_key": true,
+        "default_value": null,
+        "is_filename": false,
+        "filename_relative_path": null,
+        "is_reference": [
+          "ritual_chains",
+          "key"
+        ],
+        "lookup": null,
+        "description": "",
+        "ca_order": 1,
+        "is_bitwise": 0,
+        "enum_values": {},
+        "is_part_of_colour": null
+      },
+      {
+        "name": "unlock_mission",
+        "field_type": "OptionalStringU8",
+        "is_key": false,
+        "default_value": null,
+        "is_filename": false,
+        "filename_relative_path": null,
+        "is_reference": [
+          "missions",
+          "key"
+        ],
+        "lookup": null,
+        "description": "",
+        "ca_order": 2,
+        "is_bitwise": 0,
+        "enum_values": {},
+        "is_part_of_colour": null
+      },
+      {
+        "name": "unlock_turn",
+        "field_type": "I32",
+        "is_key": false,
+        "default_value": null,
+        "is_filename": false,
+        "filename_relative_path": null,
+        "is_reference": null,
+        "lookup": null,
+        "description": "",
+        "ca_order": 3,
+        "is_bitwise": 0,
+        "enum_values": {},
+        "is_part_of_colour": null
+      },
+      {
+        "name": "shared_progress",
+        "field_type": "Boolean",
+        "is_key": false,
+        "default_value": "false",
+        "is_filename": false,
+        "filename_relative_path": null,
+        "is_reference": null,
+        "lookup": null,
+        "description": "",
+        "ca_order": 4,
+        "is_bitwise": 0,
+        "enum_values": {},
+        "is_part_of_colour": null
+      },
+      {
+        "name": "initially_unlocked",
+        "field_type": "Boolean",
+        "is_key": false,
+        "default_value": "true",
+        "is_filename": false,
+        "filename_relative_path": null,
+        "is_reference": null,
+        "lookup": null,
+        "description": "",
+        "ca_order": 5,
+        "is_bitwise": 0,
+        "enum_values": {},
+        "is_part_of_colour": null
+      }
+    ],
+    "campaign_group_rituals_tables": [
+      {
+        "name": "campaign_group",
+        "field_type": "StringU8",
+        "is_key": true,
+        "default_value": null,
+        "is_filename": false,
+        "filename_relative_path": null,
+        "is_reference": [
+          "campaign_groups",
+          "id"
+        ],
+        "lookup": null,
+        "description": "",
+        "ca_order": 0,
+        "is_bitwise": 0,
+        "enum_values": {},
+        "is_part_of_colour": null
+      },
+      {
+        "name": "ritual",
+        "field_type": "StringU8",
+        "is_key": true,
+        "default_value": null,
+        "is_filename": false,
+        "filename_relative_path": null,
+        "is_reference": [
+          "rituals",
+          "key"
+        ],
+        "lookup": null,
+        "description": "",
+        "ca_order": 1,
+        "is_bitwise": 0,
+        "enum_values": {},
+        "is_part_of_colour": null
+      },
+      {
+        "name": "unlock_mission",
+        "field_type": "OptionalStringU8",
+        "is_key": false,
+        "default_value": null,
+        "is_filename": false,
+        "filename_relative_path": null,
+        "is_reference": [
+          "missions",
+          "key"
+        ],
+        "lookup": null,
+        "description": "",
+        "ca_order": 2,
+        "is_bitwise": 0,
+        "enum_values": {},
+        "is_part_of_colour": null
+      },
+      {
+        "name": "unlock_turn",
+        "field_type": "I32",
+        "is_key": false,
+        "default_value": "0",
+        "is_filename": false,
+        "filename_relative_path": null,
+        "is_reference": null,
+        "lookup": null,
+        "description": "",
+        "ca_order": 3,
+        "is_bitwise": 0,
+        "enum_values": {},
+        "is_part_of_colour": null
+      },
+      {
+        "name": "initially_unlocked",
+        "field_type": "Boolean",
+        "is_key": false,
+        "default_value": "false",
+        "is_filename": false,
+        "filename_relative_path": null,
+        "is_reference": null,
+        "lookup": null,
+        "description": "",
+        "ca_order": 4,
+        "is_bitwise": 0,
+        "enum_values": {},
+        "is_part_of_colour": null
+      }
+    ],
+    "campaign_groups_tables": [
+      {
+        "name": "id",
+        "field_type": "StringU8",
+        "is_key": true,
+        "default_value": null,
+        "is_filename": false,
+        "filename_relative_path": null,
+        "is_reference": null,
+        "lookup": null,
+        "description": "",
+        "ca_order": 0,
+        "is_bitwise": 0,
+        "enum_values": {},
+        "is_part_of_colour": null
+      }
+    ],
+    "faction_to_mercenary_set_junctions_tables": [
+      {
+        "name": "faction",
+        "field_type": "OptionalStringU8",
+        "is_key": true,
+        "default_value": null,
+        "is_filename": false,
+        "filename_relative_path": null,
+        "is_reference": [
+          "factions",
+          "key"
+        ],
+        "lookup": null,
+        "description": "",
+        "ca_order": 0,
+        "is_bitwise": 0,
+        "enum_values": {},
+        "is_part_of_colour": null
+      },
+      {
+        "name": "mercenary_set",
+        "field_type": "StringU8",
+        "is_key": true,
+        "default_value": null,
+        "is_filename": false,
+        "filename_relative_path": null,
+        "is_reference": [
+          "mercenary_pools",
+          "key"
+        ],
+        "lookup": null,
+        "description": "",
+        "ca_order": 1,
+        "is_bitwise": 0,
+        "enum_values": {},
+        "is_part_of_colour": null
+      }
+    ],
+    "mercenary_pool_to_groups_junctions_tables": [
+      {
+        "name": "group",
+        "field_type": "StringU8",
+        "is_key": false,
+        "default_value": null,
+        "is_filename": false,
+        "filename_relative_path": null,
+        "is_reference": [
+          "mercenary_unit_groups",
+          "key"
+        ],
+        "lookup": null,
+        "description": "",
+        "ca_order": 2,
+        "is_bitwise": 0,
+        "enum_values": {},
+        "is_part_of_colour": null
+      },
+      {
+        "name": "initial_unit_count",
+        "field_type": "I32",
+        "is_key": false,
+        "default_value": "0",
+        "is_filename": false,
+        "filename_relative_path": null,
+        "is_reference": null,
+        "lookup": null,
+        "description": "",
+        "ca_order": 3,
+        "is_bitwise": 0,
+        "enum_values": {},
+        "is_part_of_colour": null
+      },
+      {
+        "name": "key",
+        "field_type": "I32",
+        "is_key": true,
+        "default_value": null,
+        "is_filename": false,
+        "filename_relative_path": null,
+        "is_reference": null,
+        "lookup": null,
+        "description": "",
+        "ca_order": 0,
+        "is_bitwise": 0,
+        "enum_values": {},
+        "is_part_of_colour": null
+      },
+      {
+        "name": "pool",
+        "field_type": "StringU8",
+        "is_key": false,
+        "default_value": null,
+        "is_filename": false,
+        "filename_relative_path": null,
+        "is_reference": [
+          "mercenary_pools",
+          "key"
+        ],
+        "lookup": null,
+        "description": "",
+        "ca_order": 1,
+        "is_bitwise": 0,
+        "enum_values": {},
+        "is_part_of_colour": null
+      },
+      {
+        "name": "faction_requirement",
+        "field_type": "OptionalStringU8",
+        "is_key": false,
+        "default_value": null,
+        "is_filename": false,
+        "filename_relative_path": null,
+        "is_reference": [
+          "factions",
+          "key"
+        ],
+        "lookup": null,
+        "description": "",
+        "ca_order": 4,
+        "is_bitwise": 0,
+        "enum_values": {},
+        "is_part_of_colour": null
+      },
+      {
+        "name": "subculture_requirement",
+        "field_type": "OptionalStringU8",
+        "is_key": false,
+        "default_value": null,
+        "is_filename": false,
+        "filename_relative_path": null,
+        "is_reference": [
+          "cultures_subcultures",
+          "subculture"
+        ],
+        "lookup": null,
+        "description": "",
+        "ca_order": 5,
+        "is_bitwise": 0,
+        "enum_values": {},
+        "is_part_of_colour": null
+      },
+      {
+        "name": "tech_requirement",
+        "field_type": "OptionalStringU8",
+        "is_key": false,
+        "default_value": null,
+        "is_filename": false,
+        "filename_relative_path": null,
+        "is_reference": [
+          "technologies",
+          "key"
+        ],
+        "lookup": null,
+        "description": "",
+        "ca_order": 6,
+        "is_bitwise": 0,
+        "enum_values": {},
+        "is_part_of_colour": null
+      }
+    ],
+    "ui_features_to_factions_tables": [
+      {
+        "name": "faction",
+        "field_type": "StringU8",
+        "is_key": true,
+        "default_value": null,
+        "is_filename": false,
+        "filename_relative_path": null,
+        "is_reference": [
+          "factions",
+          "key"
+        ],
+        "lookup": null,
+        "description": "",
+        "ca_order": 0,
+        "is_bitwise": 0,
+        "enum_values": {},
+        "is_part_of_colour": null
+      },
+      {
+        "name": "ui_feature",
+        "field_type": "StringU8",
+        "is_key": true,
+        "default_value": null,
+        "is_filename": false,
+        "filename_relative_path": null,
+        "is_reference": [
+          "ui_features",
+          "ui_feature"
+        ],
+        "lookup": null,
+        "description": "",
+        "ca_order": 1,
+        "is_bitwise": 0,
+        "enum_values": {},
+        "is_part_of_colour": null
+      }
+    ],
+    "units_to_groupings_military_permissions_tables": [
+      {
+        "name": "unit",
+        "field_type": "StringU8",
+        "is_key": true,
+        "default_value": null,
+        "is_filename": false,
+        "filename_relative_path": null,
+        "is_reference": [
+          "main_units",
+          "unit"
+        ],
+        "lookup": null,
+        "description": "Set the same unit data also in the faction_rebellion_units_junctions table",
+        "ca_order": 0,
+        "is_bitwise": 0,
+        "enum_values": {},
+        "is_part_of_colour": null
+      },
+      {
+        "name": "military_group",
+        "field_type": "StringU8",
+        "is_key": true,
+        "default_value": null,
+        "is_filename": false,
+        "filename_relative_path": null,
+        "is_reference": [
+          "groupings_military",
+          "military_group"
+        ],
+        "lookup": null,
+        "description": "",
+        "ca_order": 1,
+        "is_bitwise": 0,
+        "enum_values": {},
+        "is_part_of_colour": null
+      }
+    ]
+  },
+  "vanilla_keys": {
+    "cultures.key": [
+      "wh2_dlc11_cst_vampire_coast",
+      "wh2_main_skv_skaven",
+      "wh3_dlc23_chd_chaos_dwarfs",
+      "wh3_main_cth_cathay",
+      "wh3_main_ogr_ogre_kingdoms",
+      "wh_main_dwf_dwarfs",
+      "wh_main_emp_empire"
+    ],
+    "campaign_group_member_culture_contexts.id": [
+      "ACTOR"
+    ],
+    "factions.key": [
+      "wh_main_emp_empire"
+    ],
+    "campaign_group_member_faction_contexts.id": [
+      "ACTOR",
+      "ORIGINATOR"
+    ],
+    "campaign_group_member_numeric_range_contexts.id": [
+      "VALUE"
+    ],
+    "pooled_resources.key": [
+      "wh3_dlc25_emp_bjuna_bombard_charges",
+      "wh3_dlc25_emp_gunnery_progress",
+      "wh3_dlc25_emp_purple_eclipse_charges",
+      "wh3_dlc25_emp_research",
+      "wh3_dlc25_emp_spirit_barrage_charges"
+    ],
+    "campaign_groups.id": [
+      "wh3_dlc25_bjuna_bombard_1-3",
+      "wh3_dlc25_captive_option_salvage_guns",
+      "wh3_dlc25_purple_eclipse_1-3",
+      "wh3_dlc25_spirit_barrage_1-3"
+    ],
+    "ritual_chains.key": [
+      "wh3_dlc25_ritual_emp_don_amethyst_artillery",
+      "wh3_dlc25_ritual_emp_don_amethyst_ironsides",
+      "wh3_dlc25_ritual_emp_don_black_rose",
+      "wh3_dlc25_ritual_emp_don_buckshot_reaper",
+      "wh3_dlc25_ritual_emp_don_cannons",
+      "wh3_dlc25_ritual_emp_don_cav_guns",
+      "wh3_dlc25_ritual_emp_don_deathstorm_battery",
+      "wh3_dlc25_ritual_emp_don_helblasters",
+      "wh3_dlc25_ritual_emp_don_helstorm",
+      "wh3_dlc25_ritual_emp_don_inf_guns",
+      "wh3_dlc25_ritual_emp_don_land_ship",
+      "wh3_dlc25_ritual_emp_don_mortors",
+      "wh3_dlc25_ritual_emp_don_steam_tank"
+    ],
+    "rituals.key": [
+      "wh3_dlc25_ritual_emp_don_amethyst_ironsides_1",
+      "wh3_dlc25_ritual_emp_don_amethyst_ironsides_2",
+      "wh3_dlc25_ritual_emp_don_amethyst_ironsides_3",
+      "wh3_dlc25_ritual_emp_don_amethyst_ironsides_4",
+      "wh3_dlc25_ritual_emp_don_amethyst_ironsides_cap",
+      "wh3_dlc25_ritual_emp_don_bjuna_bombard",
+      "wh3_dlc25_ritual_emp_don_black_rose_1",
+      "wh3_dlc25_ritual_emp_don_black_rose_2",
+      "wh3_dlc25_ritual_emp_don_black_rose_3",
+      "wh3_dlc25_ritual_emp_don_black_rose_4",
+      "wh3_dlc25_ritual_emp_don_black_rose_cap",
+      "wh3_dlc25_ritual_emp_don_buckshot_reaper_1",
+      "wh3_dlc25_ritual_emp_don_buckshot_reaper_2",
+      "wh3_dlc25_ritual_emp_don_buckshot_reaper_3",
+      "wh3_dlc25_ritual_emp_don_buckshot_reaper_4",
+      "wh3_dlc25_ritual_emp_don_buckshot_reaper_cap",
+      "wh3_dlc25_ritual_emp_don_cannons_1",
+      "wh3_dlc25_ritual_emp_don_cannons_2",
+      "wh3_dlc25_ritual_emp_don_cannons_3",
+      "wh3_dlc25_ritual_emp_don_cav_guns_1",
+      "wh3_dlc25_ritual_emp_don_cav_guns_2",
+      "wh3_dlc25_ritual_emp_don_cav_guns_3",
+      "wh3_dlc25_ritual_emp_don_deathstorm_battery_1",
+      "wh3_dlc25_ritual_emp_don_deathstorm_battery_2",
+      "wh3_dlc25_ritual_emp_don_deathstorm_battery_3",
+      "wh3_dlc25_ritual_emp_don_deathstorm_battery_4",
+      "wh3_dlc25_ritual_emp_don_deathstorm_battery_cap",
+      "wh3_dlc25_ritual_emp_don_helblasters_1",
+      "wh3_dlc25_ritual_emp_don_helblasters_2",
+      "wh3_dlc25_ritual_emp_don_helblasters_3",
+      "wh3_dlc25_ritual_emp_don_helstorm_1",
+      "wh3_dlc25_ritual_emp_don_helstorm_2",
+      "wh3_dlc25_ritual_emp_don_helstorm_3",
+      "wh3_dlc25_ritual_emp_don_inf_guns_1",
+      "wh3_dlc25_ritual_emp_don_inf_guns_2",
+      "wh3_dlc25_ritual_emp_don_inf_guns_3",
+      "wh3_dlc25_ritual_emp_don_land_ship_1",
+      "wh3_dlc25_ritual_emp_don_land_ship_2",
+      "wh3_dlc25_ritual_emp_don_land_ship_3",
+      "wh3_dlc25_ritual_emp_don_mortors_1",
+      "wh3_dlc25_ritual_emp_don_mortors_2",
+      "wh3_dlc25_ritual_emp_don_mortors_3",
+      "wh3_dlc25_ritual_emp_don_purple_eclipse",
+      "wh3_dlc25_ritual_emp_don_spirit_barrage",
+      "wh3_dlc25_ritual_emp_don_steam_tank_1",
+      "wh3_dlc25_ritual_emp_don_steam_tank_2",
+      "wh3_dlc25_ritual_emp_don_steam_tank_3"
+    ],
+    "mercenary_pools.key": [
+      "wh3_dlc25_emp_amethyst_unit_pool"
+    ],
+    "mercenary_unit_groups.key": [
+      "wh3_dlc25_emp_art_helstorm_rocket_battery_morr",
+      "wh3_dlc25_emp_cav_outriders_morr",
+      "wh3_dlc25_emp_inf_nuln_ironsides_morr",
+      "wh3_dlc25_emp_veh_marienburg_land_ship_morr"
+    ],
+    "ui_features.ui_feature": [
+      "DISTRICTS_OF_NULN"
+    ],
+    "main_units.unit": [
+      "wh2_dlc13_emp_cha_hunter_jorek_grimm_0",
+      "wh2_dlc13_emp_cha_hunter_kalara_of_wydrioth_0",
+      "wh2_dlc13_emp_cha_hunter_rodrik_l_anguille_0",
+      "wh2_dlc13_emp_inf_archers_0",
+      "wh2_dlc13_emp_inf_huntsmen_0",
+      "wh2_dlc13_emp_veh_war_wagon_0",
+      "wh2_dlc13_emp_veh_war_wagon_1",
+      "wh2_dlc13_huntmarshall_veh_obsinite_gyrocopter_0",
+      "wh3_dlc25_emp_art_helstorm_rocket_battery_morr",
+      "wh3_dlc25_emp_cav_knights_of_the_black_rose",
+      "wh3_dlc25_emp_cav_outriders_morr",
+      "wh3_dlc25_emp_cha_elspeth_von_draken",
+      "wh3_dlc25_emp_cha_elspeth_von_draken_carmine_dragon",
+      "wh3_dlc25_emp_cha_elspeth_von_draken_warhorse",
+      "wh3_dlc25_emp_cha_engineer",
+      "wh3_dlc25_emp_cha_engineer_mechanical_steed",
+      "wh3_dlc25_emp_cha_engineer_warhorse",
+      "wh3_dlc25_emp_cha_master_engineer",
+      "wh3_dlc25_emp_cha_master_engineer_mechanical_steed",
+      "wh3_dlc25_emp_cha_master_engineer_steam_tank",
+      "wh3_dlc25_emp_cha_master_engineer_warhorse",
+      "wh3_dlc25_emp_cha_theodore_bruckner",
+      "wh3_dlc25_emp_cha_theodore_bruckner_demigryph_reaper",
+      "wh3_dlc25_emp_cha_wizard_metal",
+      "wh3_dlc25_emp_cha_wizard_metal_pegasus",
+      "wh3_dlc25_emp_cha_wizard_metal_warhorse",
+      "wh3_dlc25_emp_inf_hochland_long_rifles",
+      "wh3_dlc25_emp_inf_hochland_long_rifles_ror",
+      "wh3_dlc25_emp_inf_nuln_ironsides",
+      "wh3_dlc25_emp_inf_nuln_ironsides_morr",
+      "wh3_dlc25_emp_inf_spearmen_shields_ror",
+      "wh3_dlc25_emp_veh_marienburg_land_ship",
+      "wh3_dlc25_emp_veh_marienburg_land_ship_morr",
+      "wh3_dlc25_emp_veh_marienburg_land_ship_ror",
+      "wh3_dlc25_emp_veh_steam_tank_volley_gun",
+      "wh3_dlc29_emp_cav_knights_of_the_white_wolf",
+      "wh3_dlc29_emp_cav_knights_of_the_white_wolf_ror",
+      "wh3_dlc29_emp_cav_knights_panther",
+      "wh3_dlc29_emp_inf_hunting_hounds",
+      "wh3_dlc29_emp_inf_hunting_hounds_ror",
+      "wh3_dlc29_emp_inf_teutogen_guard",
+      "wh3_dlc29_emp_inf_teutogen_guard_ror",
+      "wh3_dlc29_emp_inf_warriors_of_ulric",
+      "wh3_dlc29_emp_inf_wolf_kin",
+      "wh3_dlc29_emp_veh_celestial_hurricanum_0",
+      "wh_dlc04_emp_cav_knights_blazing_sun_0",
+      "wh_dlc04_emp_inf_flagellants_0",
+      "wh_dlc04_emp_inf_free_company_militia_0",
+      "wh_dlc04_emp_inf_sigmars_sons_0",
+      "wh_dlc05_wef_cha_waystalker_0",
+      "wh_main_dwf_cha_thane",
+      "wh_main_emp_art_great_cannon",
+      "wh_main_emp_art_helblaster_volley_gun",
+      "wh_main_emp_art_helstorm_rocket_battery",
+      "wh_main_emp_art_mortar",
+      "wh_main_emp_cav_demigryph_knights_0",
+      "wh_main_emp_cav_demigryph_knights_1",
+      "wh_main_emp_cav_empire_knights",
+      "wh_main_emp_cav_outriders_0",
+      "wh_main_emp_cav_outriders_1",
+      "wh_main_emp_cav_pistoliers_1",
+      "wh_main_emp_cav_reiksguard",
+      "wh_main_emp_cha_balthasar_gelt_0",
+      "wh_main_emp_cha_balthasar_gelt_1",
+      "wh_main_emp_cha_captain_0",
+      "wh_main_emp_cha_captain_1",
+      "wh_main_emp_cha_captain_2",
+      "wh_main_emp_cha_captain_3",
+      "wh_main_emp_cha_general_0",
+      "wh_main_emp_cha_general_1",
+      "wh_main_emp_cha_general_2",
+      "wh_main_emp_cha_general_3",
+      "wh_main_emp_cha_general_4",
+      "wh_main_emp_cha_karl_franz_0",
+      "wh_main_emp_cha_karl_franz_1",
+      "wh_main_emp_cha_karl_franz_2",
+      "wh_main_emp_cha_karl_franz_3",
+      "wh_main_emp_cha_karl_franz_4",
+      "wh_main_emp_cha_warrior_priest_0",
+      "wh_main_emp_cha_warrior_priest_1",
+      "wh_main_emp_cha_warrior_priest_2",
+      "wh_main_emp_cha_witch_hunter",
+      "wh_main_emp_cha_wizard_fire_0",
+      "wh_main_emp_cha_wizard_fire_1",
+      "wh_main_emp_cha_wizard_fire_2",
+      "wh_main_emp_cha_wizard_fire_3",
+      "wh_main_emp_cha_wizard_heavens_0",
+      "wh_main_emp_cha_wizard_heavens_1",
+      "wh_main_emp_cha_wizard_heavens_2",
+      "wh_main_emp_cha_wizard_heavens_4",
+      "wh_main_emp_cha_wizard_light_0",
+      "wh_main_emp_cha_wizard_light_1",
+      "wh_main_emp_cha_wizard_light_2",
+      "wh_main_emp_cha_wizard_light_4",
+      "wh_main_emp_inf_crossbowmen",
+      "wh_main_emp_inf_greatswords",
+      "wh_main_emp_inf_halberdiers",
+      "wh_main_emp_inf_handgunners",
+      "wh_main_emp_inf_spearmen_0",
+      "wh_main_emp_inf_spearmen_1",
+      "wh_main_emp_inf_swordsmen",
+      "wh_main_emp_veh_luminark_of_hysh_0",
+      "wh_main_emp_veh_steam_tank"
+    ],
+    "groupings_military.military_group": [
+      "wh_main_group_empire_reikland"
+    ]
+  }
+}
