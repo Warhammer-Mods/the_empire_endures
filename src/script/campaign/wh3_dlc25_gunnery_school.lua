@@ -2,9 +2,21 @@ gunnery_school = {
 	faction_key = "wh_main_emp_wissenland",
 	artillery = {
 		factor = "consumed_in_battle",
-		{ability_key = "wh3_dlc25_army_abilities_bjuna_bombard", pooled_resource_key = "wh3_dlc25_emp_bjuna_bombard_charges", depleted_incident = "wh3_dlc25_incident_gunnery_school_bombard_depleted"},
-		{ability_key = "wh3_dlc25_army_abilities_spirit_barrage", pooled_resource_key = "wh3_dlc25_emp_spirit_barrage_charges", depleted_incident = "wh3_dlc25_incident_gunnery_school_barrage_depleted"},
-		{ability_key = "wh3_dlc25_army_abilities_purple_eclipse", pooled_resource_key = "wh3_dlc25_emp_purple_eclipse_charges", depleted_incident = "wh3_dlc25_incident_gunnery_school_eclipse_depleted"}
+		{
+			ability_key = "wh3_dlc25_army_abilities_bjuna_bombard",
+			pooled_resource_key = "wh3_dlc25_emp_bjuna_bombard_charges",
+			depleted_incident = "wh3_dlc25_incident_gunnery_school_bombard_depleted",
+		},
+		{
+			ability_key = "wh3_dlc25_army_abilities_spirit_barrage",
+			pooled_resource_key = "wh3_dlc25_emp_spirit_barrage_charges",
+			depleted_incident = "wh3_dlc25_incident_gunnery_school_barrage_depleted",
+		},
+		{
+			ability_key = "wh3_dlc25_army_abilities_purple_eclipse",
+			pooled_resource_key = "wh3_dlc25_emp_purple_eclipse_charges",
+			depleted_incident = "wh3_dlc25_incident_gunnery_school_eclipse_depleted",
+		}
 	},
 	artillery_mission_abilities = {
 		-- Use bjuna bombard ability
@@ -163,9 +175,11 @@ function gunnery_school:initialise()
 		"GunnerySchoolInitialise",
 		"FactionTurnStart",
 		function(context)
-			return context:faction():name() == self.faction_key and context:faction():is_human() and self:are_initial_missions_triggered() == false
+			return context:faction():name() == self.faction_key
+				and context:faction():is_human()
+				and self:are_initial_missions_triggered() == false
 		end,
-		function(context)
+		function()
 			self:trigger_state_missions(1)
 
 			for unit, tooltip in pairs(self.locked_states) do
@@ -184,8 +198,8 @@ function gunnery_school:setup_incidents()
 			"GunnerySchoolIncidents",
 			"GunnerySchoolTierComplete"..k,
 			true,
-			function(context)
-				cm:trigger_incident(self.faction_key, incident_key, true)				
+			function()
+				cm:trigger_incident(self.faction_key, incident_key, true)
 			end,
 			true
 		)
@@ -196,7 +210,7 @@ function gunnery_school:spend_artillery_charges()
 	core:add_listener(
 		"gunnery_school_artillery_charges",
 		"BattleCompleted",
-		function(context)
+		function()
 			return cm:pending_battle_cache_faction_is_involved(self.faction_key)
 		end,
 		function()
@@ -206,12 +220,20 @@ function gunnery_school:spend_artillery_charges()
 				local faction_cqi = faction:command_queue_index()
 
 				for _, artillery in ipairs(self.artillery) do
-					local ability_use_number = pb:get_how_many_times_ability_has_been_used_in_battle(faction_cqi, artillery.ability_key)
+					local ability_use_number = pb:get_how_many_times_ability_has_been_used_in_battle(
+						faction_cqi,
+						artillery.ability_key
+					)
 					out.design("Ability: "..artillery.ability_key.." was used: "..ability_use_number.." times")
 
 					if ability_use_number > 0 then
 						-- ability has been used, remove charges equal to number of uses
-						cm:faction_add_pooled_resource(self.faction_key, artillery.pooled_resource_key, self.artillery.factor, -ability_use_number)
+						cm:faction_add_pooled_resource(
+							self.faction_key,
+							artillery.pooled_resource_key,
+							self.artillery.factor,
+							-ability_use_number
+						)
 
 						if faction:pooled_resource_manager():resource(artillery.pooled_resource_key):value() <= 0 then
 							-- charges is back to 0 inform the player
@@ -250,7 +272,7 @@ function gunnery_school:unlock_panel_progression()
 
 			return false
 		end,
-		function(context)
+		function()
 			local faction = cm:get_faction(self.faction_key)
 			local current_stage_data = self.progression_unlocks[self.current_stage]
 
@@ -265,7 +287,7 @@ function gunnery_school:unlock_panel_progression()
 			end
 
 			if current_stage_data.ancillary ~= nil then
-				cm:add_ancillary_to_faction(faction, current_stage_data.ancillary, false) 
+				cm:add_ancillary_to_faction(faction, current_stage_data.ancillary, false)
 			end
 
 			if current_stage_data.unit then
@@ -279,10 +301,10 @@ function gunnery_school:unlock_panel_progression()
 end
 
 
--- Elspeth Gunnery School check for victory conditions 
+-- Elspeth Gunnery School check for victory conditions
 function gunnery_school:campaign_victory_condition_check()
 	local is_elspeth_human = cm:get_faction(self.faction_key):is_human()
-	local campaign_name = cm:get_campaign_name() 
+	local campaign_name = cm:get_campaign_name()
 
 	if is_elspeth_human and campaign_name  == "main_warhammer"  then
 		core:add_listener(
@@ -290,7 +312,12 @@ function gunnery_school:campaign_victory_condition_check()
 			"GunnerySchoolTierComplete2",
 			true,
 			function()
-				cm:complete_scripted_mission_objective(self.faction_key, "wh_main_short_victory", "gunnery_school_level_3_victory", true)
+				cm:complete_scripted_mission_objective(
+					self.faction_key,
+					"wh_main_short_victory",
+					"gunnery_school_level_3_victory",
+					true
+				)
 			end,
 			true
 			)
@@ -300,7 +327,12 @@ function gunnery_school:campaign_victory_condition_check()
 			"GunnerySchoolTierComplete3",
 			true,
 			function()
-				cm:complete_scripted_mission_objective(self.faction_key, "wh_main_long_victory", "gunnery_school_level_5_victory", true)
+				cm:complete_scripted_mission_objective(
+					self.faction_key,
+					"wh_main_long_victory",
+					"gunnery_school_level_5_victory",
+					true
+				)
 			end,
 			true
 			)
@@ -344,7 +376,7 @@ function gunnery_school:trigger_scripted_artillery_mission(mission_key)
 	mm:add_payload("money 1500")
 
 	mm:set_should_whitelist(false)
-	
+
 	mm:trigger()
 
 	self:scripted_artillery_mission_completion_listener(mission_key)
@@ -354,12 +386,15 @@ function gunnery_school:scripted_artillery_mission_completion_listener(mission_k
 	core:add_listener(
 		"gunnery_school_artillery_objective_ability_used",
 		"BattleCompleted",
-		function(context)
+		function()
 			local pb = cm:model():pending_battle()
 			if pb:has_been_fought() then
 				local faction_cqi = cm:get_faction(self.faction_key):command_queue_index()
 
-				local ability_use_number = pb:get_how_many_times_ability_has_been_used_in_battle(faction_cqi, self.artillery_mission_abilities[mission_key])
+				local ability_use_number = pb:get_how_many_times_ability_has_been_used_in_battle(
+					faction_cqi,
+					self.artillery_mission_abilities[mission_key]
+				)
 
 				if ability_use_number > 0 then
 					-- ability for the currently active ability usage mission has been used
@@ -369,7 +404,7 @@ function gunnery_school:scripted_artillery_mission_completion_listener(mission_k
 				return false
 			end
 		end,
-		function(context)
+		function()
 			cm:complete_scripted_mission_objective(self.faction_key, mission_key, mission_key, true)
 		end,
 		false
@@ -390,7 +425,11 @@ cm:add_saving_game_callback(
 cm:add_loading_game_callback(
 	function(context)
 		if not cm:is_new_game() then
-			gunnery_school.current_stage = cm:load_named_value("gunnery_school.current_stage", gunnery_school.current_stage, context)
+			gunnery_school.current_stage = cm:load_named_value(
+				"gunnery_school.current_stage",
+				gunnery_school.current_stage,
+				context
+			)
 		end
 	end
 )

@@ -16,3 +16,8 @@
 - Fix startup CTD: three cloned charge-check members incorrectly referenced nonexistent cloned campaign groups. Retain vanilla group IDs and independent member IDs.
 - Validate every added schema-declared reference against reviewed native keys and local records; verify native DB bytes match documented rows.
 - Add regression tests reproducing all three invalid references.
+
+## Lua cleanup - 2026-10-30
+
+- Resolve all 37 Luacheck warnings in the two Gunnery School scripts: wrap long lines, remove trailing whitespace and unused callback arguments.
+- Preserve campaign behavior and keep all lint checks enabled.
